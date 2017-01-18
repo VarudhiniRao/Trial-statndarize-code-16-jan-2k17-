@@ -37,3 +37,13 @@ color: red;
 .warning{
 	color: red;
 }
+h1{
+	color:#ffee58;
+}
+.modal-content-alert{
+	background-color: #ff5252;
+}
+h2{
+	color: #004d40;
+	text-align: center;
+}

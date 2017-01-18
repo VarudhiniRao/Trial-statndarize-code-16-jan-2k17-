@@ -23,8 +23,10 @@
                 ctrl.showMe = false;
                 ctrl.show = true;
 
+               // ctrl.viewData=empDataService.singleData();
                 // service is set to show data
-                ctrl.viewData = empDataService.setData();
+                 ctrl.viewData = empDataService.setData();
+
                 console.log(ctrl.viewData);
 
             };

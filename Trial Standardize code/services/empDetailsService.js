@@ -5,7 +5,7 @@
         .module('EmpApp')
         .service('empDataService', employeeDataService);
     // function for service starts here
-    function employeeDataService() {
+    function employeeDataService($uibModal) {
         var ser = {};
         ser.employeeDetailArray = [];
         ser.editableValues = {};
@@ -13,13 +13,44 @@
         ser.employeeDetailObj = {};
         // a getdata is created to store the datas from the input models
         ser.getData = function(data) {
-                ser.employeeDetailObj = data;
-                // console.log(ser.employeeDetailObj);
-                ser.employeeDetailArray.push(ser.employeeDetailObj);
-
-                // console.log(ser.employeeDetailArray);
+            ser.employeeDetailObj = data;
+            // console.log(data.id)
+             var overRiteFlag = false;
+            for (var i = 0; i < ser.employeeDetailArray.length; i++) {
+                if (data.id == ser.employeeDetailArray[i].id) {
+                    overRiteFlag = true;
+                }
             }
-            // a setData is created in order to store the data from the get DAta and to re use where ever requiredH
+            if (overRiteFlag) {
+                for (var i = 0; i < ser.employeeDetailArray.length; i++) {
+                    if (data.id == ser.employeeDetailArray[i].id) {
+
+                        var modalInstance = $uibModal.open({
+
+                        templateUrl: 'templates/alertModal.html',
+                        controller: 'ModalInstanceCtrl',
+                        controllerAs: 'ctrl',
+                       
+
+                    });
+
+                    }
+                }
+            }
+            else {
+             ser.newobject = {};
+             ser.newobject = data;
+             ser.employeeDetailArray.push(ser.newobject);
+             console.log(ser.newobject);
+             // console.log(vm.Details);
+         }
+
+            // console.log(ser.employeeDetailObj);
+
+            console.log(ser.employeeDetailArray);
+        }
+
+        // a setData is created in order to store the data from the get DAta and to re use where ever requiredH
         ser.setData = function() {
                 return ser.employeeDetailArray;
             }
