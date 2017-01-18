@@ -1,21 +1,27 @@
-<html ng-app="EmpApp">
+<html>
 
 <head>
+<!-- bootsatrap links -->
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body ng-app="EmpApp">
+<!-- app starts here -->
+<!-- a main controller (view) -->
+<!-- which initiates the other controller i.e a ui-modal pop -->
     <div ng-controller="EmpDataCtrl as emp" class="modal-demo">
         <div class="col-md-offset-4">
             <button type="button" class="btn btn-default" ng-click="emp.open('lg')">
                 <h2>Enter Your Employee Details</h2>
             </button>
         </div>
+        <!-- this include another template for table view -->
         <div ng-if="emp.tableShow" class="col-md-12 col-sm-12">
             <div ng-include="'templates/mainTableView.html'"></div>
         </div>
     </div>
+    <!-- scripts required for andular and other css -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -27,6 +33,7 @@
     <script type="text/javascript" src="js/modalFunction.js"></script>
     <script type="text/javascript" src="services/jsonServices.js"></script>
     <script type="text/javascript" src="services/empDetailsService.js"></script>
+    <!-- scripts files ends here -->
 </body>
 
 </html>

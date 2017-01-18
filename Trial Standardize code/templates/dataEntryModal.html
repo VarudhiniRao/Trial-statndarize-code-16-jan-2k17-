@@ -1,9 +1,14 @@
+<!--ui- modal up starts here -->
+<!-- modal content starts here -->
 <div>
     <div class="modal-content">
-        <form ng-if="ctrl.showMe" name="ValidationForm">
+        <!-- form name is assigned for validations -->
+        <form name="ValidationForm">
+            <!-- header part starts here -->
             <div class="modal-header">
                 <h1>HEADER</h1>
             </div>
+            <!-- modal body starts here -->
             <div class="modal-body" id="modal-body modal-height" style="height: 500px;">
                 <div ng-if="ctrl.showMe">
                     <div class="col-md-12 col-sm-12">
@@ -70,13 +75,15 @@
                                 <input type="checkbox" ng-checked="selected=='other'" ng-true-value="'null'" ng-model="ctrl.details.selected">{{ctrl.myExperienceResult.Experience[3].Experience4}}</label>
                         </div>
                     </div>
-                    <div ng-if="ctrl.show">
-                        <div class="col-md-12 col-sm-12">
-                            <div ng-include="'templates/dataEnteredTable.html'"></div>
-                        </div>
+                </div>
+                <div ng-if="!ctrl.showMe">
+                    <div class="col-md-12 col-sm-12">
+                        <div ng-include="'templates/dataEnteredTable.html'"></div>
                     </div>
                 </div>
             </div>
+            <!-- modal body ends here. -->
+            <!-- modal footer starts here... -->
             <div class="modal-footer">
                 <div ng-if="!ctrl.show && ctrl.newFlag">
                     <div>
@@ -98,6 +105,9 @@
                     </div>
                 </div>
             </div>
+            <!-- footer section ends here -->
         </form>
+        <!-- form ends here -->
     </div>
+    <!-- content of a modal ends here -->
 </div>
