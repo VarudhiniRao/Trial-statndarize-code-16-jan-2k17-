@@ -1,0 +1,103 @@
+<div>
+    <div class="modal-content">
+        <form ng-if="ctrl.showMe" name="ValidationForm">
+            <div class="modal-header">
+                <h1>HEADER</h1>
+            </div>
+            <div class="modal-body" id="modal-body modal-height" style="height: 500px;">
+                <div ng-if="ctrl.showMe">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="col-md-6 col-xs-12">
+                            <label>
+                                <h3>Enter Your Id Here:</h3></label>
+                            <sup-script class="asteric ">*</sup-script>
+                            <input style="cursor:pointer;" class="input-text" type="text" name="Id" placeholder="ID" ng-model="ctrl.details.id" required>
+                            <label class="warning" ng-if="ValidationForm.Id.$error.required">Please Fill Out these</label>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <label>
+                                <h3>Enter Your Name Here:</h3></label>
+                            <sup-script class="asteric ">*</sup-script>
+                            <input style="cursor:pointer;" class="input-text" type="text" name="name" placeholder="Name" ng-model="ctrl.details.name" required>
+                            <label class="warning" ng-if="ValidationForm.name.$error.required">Please Fill Out these</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="col-md-4 col-xs-12">
+                            <label>
+                                <h3>Designation:</h3></label>
+                            <input style="cursor:pointer;" class="input-text2" type="text" name="Designation" placeholder="Designation" ng-model="ctrl.details.designation">
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <label>
+                                <h3>Phone Number:</h3></label>
+                            <input style="cursor:pointer;" maxlength="10" class="input-text2" type="text" name="Phone" placeholder="PhoneNumber" ng-model="ctrl.details.Phone">
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <label>
+                                <h3>Domain:</h3></label>
+                            <div class="inner-addon left-addon">
+                                <div class="dropdown">
+                                    <div class="dropdown">
+                                        <input type="text" class="form-control input-text2" placeholder="Search" data-toggle="dropdown" name="dropdownList" ng-model="ctrl.details.domainModel" style="cursor:pointer;" /><i class="fa fa-angle-down button-down" aria-hidden="true"></i>
+                                        <span>{{ctrl.data}}</span>
+                                        <!-- <label ng-if="ValidationForm.dropdownList.$error.required">Please Fill Out these</label> -->
+                                        <ul class="dropdown-menu">
+                                            <li ng-repeat=" data in ctrl.myDomainResult.Domain|filter:ctrl.details.domainModel" ng-click="ctrl.selectDomain(data.domain)">{{data.domain}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>
+                            <h3>Expereince</h3></label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-checked="selected=='male'" ng-true-value="'1 year'" ng-model="ctrl.details.selected">{{ctrl.myExperienceResult.Experience[0].Experience1}}</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-checked="selected=='male'" ng-true-value="'2 year'" ng-model="ctrl.details.selected">{{ctrl.myExperienceResult.Experience[1].Experience2}}</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-checked="selected=='male'" ng-true-value="'more than 5 year'" ng-model="ctrl.details.selected">{{ctrl.myExperienceResult.Experience[2].Experience3}}</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-checked="selected=='other'" ng-true-value="'null'" ng-model="ctrl.details.selected">{{ctrl.myExperienceResult.Experience[3].Experience4}}</label>
+                        </div>
+                    </div>
+                    <div ng-if="ctrl.show">
+                        <div class="col-md-12 col-sm-12">
+                            <div ng-include="'templates/dataEnteredTable.html'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div ng-if="!ctrl.show && ctrl.newFlag">
+                    <div>
+                        <button class="btn btn-primary" type="button" ng-click="ValidationForm.$invalid ? '' : ctrl.next() ">NEXT</button>
+                        <button class="btn  btn-primary" type="button" ng-click="ctrl.cancel()">CANCEL</button>
+                    </div>
+                </div>
+                <div ng-if="ctrl.show">
+                    <div>
+                        <button class="btn btn-primary" type="button" ng-click="ctrl.previous()">PREVIOUS</button>
+                        <button class="btn btn-warning" type="button" ng-click="ctrl.ok()">OK</button>
+                        <button class="btn  btn-primary" type="button" ng-click="ctrl.cancel()">CANCEL</button>
+                    </div>
+                </div>
+                <div ng-if="!ctrl.newFlag">
+                    <div>
+                        <button class="btn btn-primary" type="button" ng-click="ctrl.save($index)">SAVE</button>
+                        <button class="btn  btn-primary" type="button" ng-click="ctrl.cancel()">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

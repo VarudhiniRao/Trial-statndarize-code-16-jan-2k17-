@@ -1,0 +1,45 @@
+{
+  "Domain": [
+    {
+      "domain":"IT"
+     
+    },
+    {
+      "domain":"IT-Development"
+     
+    },
+    {
+      "domain":"Angular-Js"
+     
+    },
+    {
+      "domain":"Telecom"
+     
+    },
+    {
+      "domain":"Connecting Devices"
+     
+    },
+    {
+      "domain":"Hiring Team"
+     
+    },
+    {
+      "domain":"Java"
+     
+    },
+    {
+      "domain":"Back-End"
+     
+    },
+    {
+      "domain":"Big-Data"
+     
+    },
+    {
+      "domain":"C-dev"
+     
+    }
+    
+  ]
+}

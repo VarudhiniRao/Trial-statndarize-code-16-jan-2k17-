@@ -1,0 +1,39 @@
+.input-text{
+	width:260px;
+	height:36px;
+}.input-text2{
+	width:180px;
+	height:36px;
+}
+.button-down{
+	position: relative;
+    top: -30px;
+    left: 180px;
+    border-color: transparent;
+	background-color: transparent;
+	margin-left: -15px;
+	font-size: 20px;
+}
+.button-down:hover{
+	color: red;
+}
+button{
+	background-color: transparent;
+	border:transparent;
+	font-size: 20px;
+}
+h3{
+	color: blue;
+}
+input,td{
+	 text-transform: uppercase;
+}
+.asteric{
+
+font-size: 25px;
+color: red;
+
+}
+.warning{
+	color: red;
+}
