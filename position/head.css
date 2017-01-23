@@ -1,0 +1,40 @@
+.head{
+  position:absolute;
+  padding:100px;
+  color:black;
+  background-color:yellow;
+  margin-top:80px;
+  margin-left:350px;
+  height:150px;
+  width: 200px;
+   border: 1px solid black;
+   top:2%;
+   bottom:10%;
+  
+  
+
+}
+.header1{
+	position:absolute;
+	
+	height:100px;
+	width:100px;
+	background-color:red;
+	margin:100px;
+    border: 1px solid red;
+	margin-left:150px;
+	top:1%;
+	bottom:300px;
+	
+}
+.header2{
+	position:absolute;
+	
+	height:100px;
+	width:100px;
+	background-color:blue;
+	margin-right:300%;
+	
+	border: 1px solid green;
+	
+}

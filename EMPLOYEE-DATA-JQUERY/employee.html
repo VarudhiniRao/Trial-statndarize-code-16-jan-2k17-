@@ -1,0 +1,52 @@
+<html>
+  <head>
+   <title>detailsDetails</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+  <body>
+    <div style="text-align:center;font-weight:bold;font-family:monospace;font-size:20px">
+      WELCOME TO EMPLOYEE DETAILS
+  </div>
+
+
+     <table id="emp_detail" border="1" class="table">
+       <tr >
+         <th  class="success">EMPLOYEE ID</th>
+         <th class="info">EMPLOYEE NAME</th>
+         <th class="warning">EMPLOYEE EXPERIENCE</th>
+         <th class="danger">EMPLOYEE DESIGNATION</th>
+         <th class="active">EMPLOYEE PH.NUMBER</th>
+       </tr>
+   </table>
+
+  <script>
+    $(document).ready(function(){
+
+
+        var empDetails="";
+        $.getJSON("./employee.json", function(details){
+	 console.log(details.employeeDetails);
+
+        for(var i=0;i<details.employeeDetails.length;i++){
+                  empDetails += '<tr><td>' +
+                  details.employeeDetails[i].empNum +
+                   '</td><td>' + details.employeeDetails[i].empName +
+                   '</td><td>'+ details.employeeDetails[i].empExp+
+                   '</td><td>'+ details.employeeDetails[i].empDes+
+                   '</td><td>'+ details.employeeDetails[i].mobileNum+'</td></tr>';
+
+
+
+        }
+        $("#emp_detail").append(empDetails);
+
+
+      });
+});
+
+
+  </script>
+</body>
+</html>
